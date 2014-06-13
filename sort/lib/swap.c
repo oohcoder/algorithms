@@ -1,6 +1,6 @@
-#include "exchange.h"
+#include "swap.h"
 
-void exchange(int *a, int *b)
+void swap(int *a, int *b)
 {
     int tmp;
     tmp = *a;

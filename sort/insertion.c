@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "lib/exchange.h"
+#include "lib/swap.h"
 
 #define SIZE 10
 
