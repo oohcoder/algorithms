@@ -1,5 +1,11 @@
+/*
+ * 插入排序算法
+ * author: sean chen
+ */
 #include <stdio.h>
-#include "lib/swap.h"
+#include "lib/swapnum.h"
+#include "lib/rangerand.h"
+#include "lib/putarr.h"
 
 #define SIZE 10
 
@@ -9,18 +15,11 @@ void insertion(int *arr, int size);
 int main(void)
 {
     int i;
-    int arr[SIZE] = {12, 23, 34, 45, 66, 2, 5,65, 23, 12};
-    for(i = 0; i < SIZE; i++)
-    {
-        printf("arr[%d] = %d ", i, arr[i]);
-    }
-    putchar('\n');
+    int arr[SIZE];
+    rangeRand(0, 50, 10, arr);
+    putarr(arr, SIZE);
     insertion(arr, SIZE);
-    for(i = 0; i < SIZE; i++)
-    {
-        printf("arr[%d] = %d ", i, arr[i]);
-    }
-    putchar('\n');
+    putarr(arr, SIZE);
     return 0;
 }
 
@@ -30,7 +29,7 @@ void insertion(int *arr, int size)
     for( i = 0; i < SIZE-1; i++) {
         for(j = i + 1; j > 0; j--) {
             if( arr[j] < arr[j-1]){
-                exchange(&arr[j], &arr[j-1]);
+                swapNum(&arr[j], &arr[j-1]);
             } else {
                 break;
             }
