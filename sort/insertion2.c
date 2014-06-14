@@ -1,3 +1,6 @@
+/*
+ * 插入排序的另一种写法
+ */
 #include <stdio.h>
 #include "lib/rangerand.h"
 #include "lib/swapnum.h"
