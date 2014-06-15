@@ -1,3 +1,6 @@
+/*
+ * 合并排序
+ */
 #include <stdio.h>
 #include <limits.h>
 #include <string.h>
@@ -21,6 +24,7 @@ int main()
     putarr(arr, SIZE);
 }
 
+//递归调用，先对两边的数组排序，然后在合并
 void mergeSort(int *arr, int low, int high) {
     if(low < high) {
         int mid = (int)(low+high)/2;
@@ -31,6 +35,7 @@ void mergeSort(int *arr, int low, int high) {
     }
 }
 
+//第一种合并方式
 void merge(int *arr, int low, int mid, int high) {
     int *temp = malloc((high - low + 1)*sizeof(int));
     int m = low;
@@ -63,6 +68,7 @@ void merge(int *arr, int low, int mid, int high) {
     free(temp);
 }
 
+//第二种合并方式
 void merge2(int *arr, int low, int mid, int high) {
     int l1 = mid - low + 1;
     int l2 = high - mid;
